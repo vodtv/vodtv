@@ -15,11 +15,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: run a standard checkout action
       - name: Checkout target repo
         uses: actions/checkout@v4
-
-      # Step 2: run the sync action
+        
       - name: Sync upstream changes
         id: sync
         uses: aormsby/Fork-Sync-With-Upstream-action@v3.4.1
@@ -28,13 +26,7 @@ jobs:
           upstream_sync_branch: main
           target_sync_branch: main
           target_repo_token: ${{ secrets.ACITON_TOKEN }}
-
-      - name: Sync check
-        if: failure()
-        run: |
-          echo "[Error] Due to a change in the workflow file of the upstream repository, GitHub has automatically suspended the scheduled automatic update. You need to manually sync your fork."
-          exit 1
-
+   
       - name: Delete workflow runs
         uses: Mattraks/delete-workflow-runs@main
         with:
