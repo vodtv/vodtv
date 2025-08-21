@@ -1,6 +1,6 @@
 {
   "name": "vodtv",
-  "version": "0.1.0",
+  "version": "20250824231933",
   "private": true,
   "scripts": {
     "dev": "pnpm gen:runtime && pnpm gen:manifest && next dev -H 0.0.0.0",
