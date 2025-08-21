@@ -160,7 +160,7 @@ jobs:
 
             **拉取命令：**
             \`\`\`bash
-            docker pull ghcr.io/${{ steps.lowercase.outputs.owner }}/moontv:pr-${{ github.event.number }}
+            docker pull ghcr.io/${{ steps.lowercase.outputs.owner }}/vodtv:pr-${{ github.event.number }}
             \`\`\`
 
             **标签：** \`pr-${{ github.event.number }}\`
