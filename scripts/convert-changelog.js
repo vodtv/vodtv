@@ -2,8 +2,8 @@
 
 /* eslint-disable */
 
-import fs from "fs";
-import * as path from "path";
+const fs = require('fs');
+const path = require('path');
 
 function parseChangelog(content) {
   const lines = content.split('\n');
