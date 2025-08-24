@@ -83,7 +83,7 @@ export async function POST(request: NextRequest) {
       operatorRole = 'owner';
     } else {
       const userEntry = adminConfig.UserConfig.Users.find(
-        (u) => u.username === username
+        (u: { username: string; }) => u.username === username
       );
       if (!userEntry || userEntry.role !== 'admin') {
         return NextResponse.json({ error: '权限不足' }, { status: 401 });
@@ -93,7 +93,7 @@ export async function POST(request: NextRequest) {
 
     // 查找目标用户条目
     let targetEntry = adminConfig.UserConfig.Users.find(
-      (u) => u.username === targetUsername
+      (u: { username: string | undefined; }) => u.username === targetUsername
     );
 
     if (
@@ -298,7 +298,7 @@ export async function POST(request: NextRequest) {
 
           // 从配置中移除用户
           const userIndex = adminConfig.UserConfig.Users.findIndex(
-            (u) => u.username === targetUsername
+            (u: { username: string | undefined; }) => u.username === targetUsername
           );
           if (userIndex > -1) {
             adminConfig.UserConfig.Users.splice(userIndex, 1);

@@ -36,6 +36,9 @@ export async function POST(request: NextRequest) {
       ImageProxy,
       DoubanProxy,
       DisableYellowFilter,
+      DoubanProxyType, 
+      DoubanImageProxyType,
+      DoubanImageProxy
     } = body as {
       SiteName: string;
       Announcement: string;
@@ -44,6 +47,9 @@ export async function POST(request: NextRequest) {
       ImageProxy: string;
       DoubanProxy: string;
       DisableYellowFilter: boolean;
+      DoubanProxyType: string;
+      DoubanImageProxyType: string;
+      DoubanImageProxy: string;      
     };
 
     // 参数校验
@@ -82,6 +88,9 @@ export async function POST(request: NextRequest) {
       ImageProxy,
       DoubanProxy,
       DisableYellowFilter,
+      DoubanProxyType, 
+      DoubanImageProxyType,
+      DoubanImageProxy
     };
 
     // 写入数据库
